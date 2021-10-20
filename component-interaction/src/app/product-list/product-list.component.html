@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let p of products" >
+        <app-product-item [name]="p.name" [price]="p.price"  (valueChange)='displayCounter($event)'></app-product-item>
+    </li>
+</ul>
+
