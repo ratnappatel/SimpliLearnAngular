@@ -1,0 +1,30 @@
+<div class="container">
+  <div *ngFor="let car of cars" [ngClass]="{
+    'alert-primary': car === 'MG Hector',
+    'alert-secondary': car === 'Ford Fiesta',
+    'alert-success': car === 'KIA',
+    'alert-danger': car === 'Creta',
+    'alert-warning': car === 'Jaguar'
+  }">
+    {{car}}
+  </div>
+
+  <div [ngStyle]="{'color': color,'font-size':size}">
+    Applying Dynamic Style with Angular.
+  </div>
+  <input type="text" [(ngModel)]="color" placeholder="Enter Color Name" /><br>
+  <input type="number" [(ngModel)]="size" placeholder="Enter Font Size" /><br>
+
+  <button (click)="show=!show">
+    {{show?'Hide':'Show'}}
+  </button>
+ 
+
+  <div *ngIf="show">Section to Display/show</div>
+
+  current value of show property =  {{show}}
+
+
+
+  <app-pipes-example> </app-pipes-example>
+</div>
