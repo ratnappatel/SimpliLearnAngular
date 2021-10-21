@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="card-columns" *ngFor="let p of photos">
+        <div class="card" style="width:200px" >
+            <img class="card-img-top" src="{{p.thumbnailUrl}}">
+            <div class="card-body">
+                <h3 class="card-title">Color Pallette</h3>
+                <p class="card-text">{{p.id}} {{p.title}}</p>
+            </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,50 @@
+<div class="container">
+    <h1>Create new Photo</h1>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+            <label for="albumId">Album Id:</label>
+            <input 
+                formControlName="albumId"
+                id="albumId"
+                type="number"
+                class="form-control">
+            <div *ngIf="f.albumId.touched && f.albumId.invalid" class="alert alert-danger">
+                <div *ngIf="f.albumId.errors?.required">Album Id is required</div>
+            </div>
+        </div>
+            <div class="form-group">
+                <label for="id">Id:</label>
+            <input 
+                formControlName="id"
+                id="id"
+                type="number"
+                class="form-control">
+</div>
+<div class="form-group">
+                <label for="title">Title:</label>
+            <input 
+                formControlName="title"
+                id="title"
+                type="text"
+                class="form-control">
+</div>
+<div class="form-group">
+                <label for="url">URL:</label>
+            <input 
+                formControlName="url"
+                id="url"
+                type="text"
+                class="form-control">
+</div>
+<div class="form-group">
+                <label for="thumbnailUrl">Thumbnail URL:</label>
+            <input 
+                formControlName="thumbnailUrl"
+                id="thumbnailUrl"
+                type="text"
+                class="form-control">
+        </div>
+            <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>

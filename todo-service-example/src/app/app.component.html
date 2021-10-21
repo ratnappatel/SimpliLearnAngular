@@ -1,0 +1,12 @@
+<div class="container">
+  <div *ngFor="let todo of todos" class="card">
+    <img class="card-img-top" src="https://picsum.photos/200/300" height="50" width="50">
+    <div class="card-body">
+      <h1 class="card-title">ToDo Task</h1>
+        <h3>{{todo.id}}</h3>
+        <p>
+          {{todo.title}} : {{todo.completed}}
+        </p>
+  </div>
+  </div>
+</div>

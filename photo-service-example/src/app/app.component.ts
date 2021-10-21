@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit(): void {
-      console.log(this.photoService.getPhotos());
+      this.photoService.getPhotos().subscribe((data)=>{
+        console.log(data);
+      });
   }
 }
