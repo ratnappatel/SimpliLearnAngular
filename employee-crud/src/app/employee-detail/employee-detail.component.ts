@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Employee } from '../employee';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee-detail',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeDetailComponent implements OnInit {
 
-  constructor() { }
+  employee!:Employee;
+  id!:number;
+  constructor(private route:ActivatedRoute,private router:Router,private service:EmployeeService) { }
 
   ngOnInit(): void {
-  }
+    this.id=this.route.snapshot.params['id'];
 
+    this.service.getEmployee(this.id)
+    .subscribe(data=>{
+      console.log(data)
+      this.employee=data;
+    },error=>console.log(error));
+  }
+  list(){
+    this.router.navigate(['employees']);
+  }
 }

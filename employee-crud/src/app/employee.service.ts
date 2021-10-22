@@ -19,4 +19,16 @@ export class EmployeeService {
   createEmployee(employee: Employee) {
    return this.http.post(`${this.apiUrl}`,employee);
   }
+
+  deleteEmployee(id:number):Observable<any>{
+    return this.http.delete(`${this.apiUrl}/${id}`,{responseType: 'text'});
+  }
+
+  updateEmployee(id:number,value:any):Observable<Object>{
+    return this.http.put(`${this.apiUrl}/${id}`,value);
+  }
+
+  getEmployee(id:number):Observable<any>{
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
 }
