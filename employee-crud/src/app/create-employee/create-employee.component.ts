@@ -12,6 +12,7 @@ export class CreateEmployeeComponent implements OnInit {
 
   employee: Employee = new Employee();
   submitted = false;
+  id:number=300;
 
   constructor(private employeeService: EmployeeService,
     private router: Router) { }
@@ -22,6 +23,7 @@ export class CreateEmployeeComponent implements OnInit {
   newEmployee(): void {
     this.submitted = false;
     this.employee = new Employee();
+    this.employee.id=this.id+1;
   }
 
   save() {

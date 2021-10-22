@@ -9,7 +9,8 @@ import { Employee } from './employee';
 export class EmployeeService {
  
 
-  private apiUrl='http://localhost:90/springboot-crud-rest/employees';
+ // private apiUrl='http://localhost:90/springboot-crud-rest/employees';
+ private apiUrl='http://localhost:3000/employees';
   constructor(private http:HttpClient) { }
 
   getEmployeeList():Observable<any>{
