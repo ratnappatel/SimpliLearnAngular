@@ -1,0 +1,11 @@
+<h1> My Custom Attribute Directive</h1>
+<p>Choose a color to style your Paragraph</p>
+<div>
+  <input type="radio" name="colors" (click)="color='green'">Green
+  <input type="radio" name="colors" (click)="color='orange'">Orange
+  <input type="radio" name="colors" (click)="color='red'">Red
+</div>
+
+<p [styleMe]=color>Style me !!!</p>
+
+<h1>{{message | encode }}</h1>
