@@ -29,7 +29,7 @@ products:Products[]=[
   }
   // Go to child component and read counter object again
   displayCounter(count: any){
-    console.log(count);
+    console.log("No of Button Clicked by Child Component is : "+count);
   }
 
 }
