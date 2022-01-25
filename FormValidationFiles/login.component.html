@@ -1,0 +1,23 @@
+
+<form [formGroup]="loginForm"> <!-- #registerForm='ngForm'-->
+    <div>
+        <!-- #firstnamevar='ngModel'-->
+        <input type="text" formControlName="username" placeholder="username" >
+        
+    </div>
+
+    <div>
+        <input type="text" formControlName="password" placeholder="password">
+       
+    </div>
+
+    <div>
+        <button [disabled]=loginForm.invalid (click)="login()">Login</button>
+    </div>
+    <small>
+        {{getUserNameErrorMessage()}}
+    </small>
+    <small>
+        {{getPasswordErrorMessage()}}
+    </small>
+</form>
