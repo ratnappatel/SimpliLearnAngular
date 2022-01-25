@@ -1,0 +1,43 @@
+<form #registerForm="ngForm" (ngSubmit)="registerForm.form.valid && onSubmit(registerForm)">   <!--binds ngForm to <form> tag implicitly-->
+    <p>
+        <label for="firstname">First Name: </label>
+        <input type="text" required minlength="6" id="firstname" [(ngModel)]="firstname" name="firstname" #firstnamevar="ngModel"
+         > <!-- FormControl instance is created for every form control by default-->
+    </p>
+    <!-- <div *ngIf="registerForm.submitted && firstnamevar.invalid"> -->
+        <div *ngIf="firstnamevar.errors?.['required']" style="color:red">First Name must not be left blank.</div>
+        <div *ngIf="firstnamevar.errors?.['minlength']" style="color:red">First Name must be of min 6 character long.</div>
+    <!-- </div> -->
+
+    <p>
+        <label for="lastname">Last Name: </label>
+        <input type="text" required id="lastname" name="lastname" [(ngModel)]="lastname" #lastnamevar="ngModel"> 
+    </p>
+
+    <p>
+        <label for="email">Email: </label>
+        <input type="text" required id="email" name="email" [(ngModel)]="email" #emailvar="ngModel">
+    </p>
+
+    <p>
+        <label for="gender">Select Gender: </label>
+        <input type="radio" value="male" id="gender" name="gender" [(ngModel)]="male" #malevar="ngModel">Male
+        <input type="radio" value="female" id="gender" name="gender" [(ngModel)]="female" #femalevar="ngModel">Female
+    </p>
+
+    <p>
+        <label for="phone">Phone Number: </label>
+        <input type="text" required id="phone" name="phone" [(ngModel)]="phone" #phonevar="ngModel">
+    </p>
+
+    <p>
+        <label for="profile">Select Your Profile: </label>
+        <select name="profile" id="profile" [(ngModel)]="profile" #profilevar="ngModel">
+            <option selected="---" value=""></option> 
+            <option [ngValue]="p.id" *ngFor="let p of profiles">{{p.title}}</option>
+        </select>
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</form>

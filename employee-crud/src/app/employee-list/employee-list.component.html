@@ -9,14 +9,18 @@
                     <th>FirstName</th>
                     <th>LastName</th>
                     <th>Email</th>
+                    <th>Salary</th>
+                    <th>Last Accessed</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let emp of employees | async">
-                    <td>{{emp.firstName}}</td>
+                    <td>{{emp.firstName | uppercase}}</td>
                     <td>{{emp.lastName}}</td>
                     <td>{{emp.emailId}}</td>
+                    <td>{{salary | currency:'INR':'symbol'}}</td>
+                    <td>{{today | date:'full':'en-us'}}</td>
                     <td>
                         <button  (click)="updateEmployee(emp.id)" class="btn btn-info" style="margin-left:10px">Update</button>
                         <button  (click)="deleteEmployee(emp.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>

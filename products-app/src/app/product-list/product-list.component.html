@@ -1,0 +1,16 @@
+<table style="border:5px solid; border-collapse: collapse; width:500px">
+    <thead>
+        <tr>
+            <th>Product Title</th>
+            <th>Product Description</th>
+            <th>Picture</th>
+        </tr>
+    </thead>
+        <tr *ngFor="let p of products |async">
+            <td>{{p.title}}</td>
+            <td style="word-wrap: break-word">{{p.description}}</td>
+            <td><img src="{{p.filename}}" width=100 height=100></td>
+            <td><input type=button value="Activities" (click)="getActivities()"> </td>
+        </tr>
+  
+</table>

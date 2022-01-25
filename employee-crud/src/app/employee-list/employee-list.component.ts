@@ -12,6 +12,8 @@ import { Employee } from '../employee';
 export class EmployeeListComponent implements OnInit {
 
   employees!: Observable<Employee[]>;
+  salary:number=10000;
+  today:string='26-feb-2011';
   constructor(private service:EmployeeService, private router:Router) { }
 
   ngOnInit(): void {

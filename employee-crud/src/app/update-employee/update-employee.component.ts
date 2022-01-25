@@ -30,7 +30,7 @@ export class UpdateEmployeeComponent implements OnInit {
   updateEmployee(){
     this.service.updateEmployee(this.id,this.employee).subscribe(data=>{
       console.log(data);
-      this.employee=new Employee();
+      this.employee=new Employee(); // remove the data from employee object so that it can be re-used
       this.gotoList();
       },
       error=>console.log(error));
