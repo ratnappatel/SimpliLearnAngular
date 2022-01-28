@@ -1,4 +1,4 @@
-const app = require('express').Router();
+const app = require('express').Router(); // similar to your import statement in Angular/Java app
 const path = require('path');
 const {enableAuth} = require('../config');
 

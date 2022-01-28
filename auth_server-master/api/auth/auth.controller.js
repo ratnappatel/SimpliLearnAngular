@@ -6,7 +6,8 @@ function authenticate(req, res, next) {
   console.log('HERE');
   const username = req.body.username;
   const password = req.body.password;
-
+  
+  console.log(username);
   if(!users[username]) { res.status(403).json({message: 'Unauthorized'}); return; }
   if(users[username].password !== password) { res.status(403).json({message: 'Unauthorized'}); return; }
 
