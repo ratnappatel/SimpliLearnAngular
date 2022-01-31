@@ -1,0 +1,16 @@
+Welcome {{loggedInName}}... You have logged in at : {{loggedInTime}}
+
+<app-note-taker></app-note-taker>
+
+<router-outlet></router-outlet>
+<router-outlet name="editOutlet"></router-outlet>
+
+  <h4>Choose Background Color</h4>
+  <div>
+    <input type="radio" name="colors" (click)="background='lightgreen'">Green
+    <input type="radio" name="colors" (click)="background='lightyellow'">Yellow
+    <input type="radio" name="colors" (click)="background='lightcyan'">Cyan
+  </div>
+<!-- {{background}} -->
+  
+  

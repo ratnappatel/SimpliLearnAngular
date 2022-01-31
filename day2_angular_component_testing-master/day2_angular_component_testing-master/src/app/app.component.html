@@ -1,0 +1,42 @@
+<app-header>
+
+</app-header>
+
+  <mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Add Note
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div>
+      <!-- Note Title: <input (change)="onChangeTitle($event)" [value]="note.title" [style.background-color]="textColor" type="text" > -->
+      <mat-form-field>
+        <input matInput [(ngModel)]="note.title" placeholder="Note Title" [style.background-color]="textColor" type="text" >
+      </mat-form-field>
+      <br/>
+      
+      {{errorMessage}}
+    </div>
+    <div>
+      <!-- Note Text: <textarea (change)="onChangeText($event)" [value]="note.text" ></textarea> -->
+      <mat-form-field>
+        <textarea matInput [(ngModel)]="note.text" placeholder="Note Text"></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <button type="submit" (click)="addNote()">Done</button>
+    </div>
+  </mat-expansion-panel>
+
+  <mat-card *ngFor="let note of notes">
+    <mat-card-header>
+      <mat-card-title>
+        {{note.title}}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        {{note.text}}
+    </mat-card-content>
+
+  </mat-card>  
+  
