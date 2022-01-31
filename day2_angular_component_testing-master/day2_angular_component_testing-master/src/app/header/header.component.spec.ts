@@ -9,6 +9,7 @@ describe('HeaderComponent', () => {
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
+    // When Component Must be a part of Angular Project Module
     await TestBed.configureTestingModule({
       declarations: [ HeaderComponent ],
       imports: [

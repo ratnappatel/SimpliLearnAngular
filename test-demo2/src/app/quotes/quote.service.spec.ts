@@ -13,7 +13,7 @@ describe('QuoteService', () => {
   });
 
   it('should create a new quote in array', () => {
-    const quoteText="This is my first quote";
+    const quoteText="This is my first quote"; // My input to test entry on quote array
     service.addNewQuote(quoteText);
     expect(service.quoteList.length).toBeGreaterThanOrEqual(1);
   });
