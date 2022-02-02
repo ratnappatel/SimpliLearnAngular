@@ -13,6 +13,8 @@ describe('workspace-project App', () => {
     expect(page.getTitleText()).toEqual('Keep App');
   });
 
+  // Failure status testing
+
   it('should display error message when login fails',()=>{
     browser.get('login');
     const inputElements = element.all(by.css('input'))
@@ -23,9 +25,10 @@ describe('workspace-project App', () => {
     button.click();
     const errorElement = element(by.css('.errorMessage'))
     expect(errorElement.getText()).toContain('Unauthorized');
-    browser.sleep(1500);
+    browser.sleep(3000);
   })
 
+  // Success status testing
   
   it('should navigate to home page when login succeeds',()=>{
     browser.get('login');
@@ -36,7 +39,7 @@ describe('workspace-project App', () => {
     const button  = element(by.css('button'));
     button.click();
     expect(browser.getCurrentUrl()).toContain('home')
-    browser.sleep(1500);
+    browser.sleep(3000);
   })
 
   // afterEach(async () => {
